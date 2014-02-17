@@ -1,0 +1,10 @@
+body {
+  font-family: "Helvetica Neue", "Tahoma", sans-serif;
+  font-size: 10pt;
+}
+
+h1 {
+  color: #555;
+  background: #eee;
+  padding: 5px;
+}
