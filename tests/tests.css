@@ -1,10 +1,12 @@
-body {
-  font-family: "Helvetica Neue", "Tahoma", sans-serif;
+body, button {
+  font-family: "Gill Sans", "Helvetica Neue", "Tahoma", sans-serif;
   font-size: 10pt;
+  font-weight: 300;
 }
 
 h1 {
   color: #555;
   background: #eee;
   padding: 5px;
+  font-weight: 300;
 }
