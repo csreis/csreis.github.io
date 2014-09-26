@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+function navFrame(url) {
+  document.getElementById("frame1").src = url;
+}
+
+function sendMessage(msg) {
+  document.getElementById("output").innerText += "Sending: " + msg;
+  document.getElementById("frame1").contentWindow.postMessage(msg, "https://csreis.github.io");
+}
+
+window.addEventListener(
+  "message",
+  function (event) {
+    document.getElementById("output").innerText += "Reply: " + event.data;
+  },
+  false);
+
+</script>
+</head>
+<body>
+<h1>postMessage test</h1>
+
+Frame 1:<br>
+<iframe
+    id="frame1" src="data:text/html,Initial page"
+    width=500 height=300></iframe><br>
+<button onclick="navFrame('https://csreis.github.io/tests/post-message-subframe')">Load cross-site subframe</button>
+<button onclick="sendMessage('foo')">postMessage to subframe</button>
+<p>
+<div id="output"></div>
+
+</html>
