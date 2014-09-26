@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+function output(msg) {
+  document.getElementById("output").innerText += msg;
+}
+
+function sendMessage(msg) {
+  output("Sending: " + msg);
+  try {
+    document.getElementById("frame1").contentWindow.postMessage(msg, "https://csreis.github.io");
+  } catch (e) {
+    output("Error: " + e);
+  }
+}
+
+window.addEventListener(
+  "message",
+  function (event) {
+    var msg = "bar";
+    output("Received: " + event.data);
+    output("Sending reply: " + msg);
+    event.source.postMessage(msg, event.origin);
+  },
+  false);
+
+</script>
+</head>
+<body>
+<h1>postMessage subframe</h1>
+
+<div id="output"></div>
+
+</html>
