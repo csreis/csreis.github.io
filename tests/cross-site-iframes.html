@@ -12,7 +12,7 @@ function addFrame() {
       "<button onclick=\"navFrame('https://csreis.github.io')\">Go cross-site (simple page)</button>\n" +
       "<button onclick=\"navFrame('http://codereview.chromium.org')\">Go cross-site (codereview)</button>\n" +
       "<button onclick=\"navFrame('simple.html')\">Go same-site</button><p>\n";
-  document.body.appendChild(frameHTML);
+  document.body.innerHTML += frameHTML;
   nextFrameNum++;
 }
 
