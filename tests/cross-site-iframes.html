@@ -2,21 +2,31 @@
 <head>
 <link rel="stylesheet" href="tests.css">
 <script>
-function navFrame(url) {
-  document.getElementById("frame1").src = url;
+
+var nextFrameNum = 1;
+
+function addFrame() {
+  var frameHTML =
+      "Frame " + nextFrameNum + ":<br>\n" +
+      "<iframe id=\"frame" + nextFrameNum + "\" src=\"data:text/html,Initial page\" width=500 height=300></iframe><br>\n" +
+      "<button onclick=\"navFrame('https://csreis.github.io')\">Go cross-site (simple page)</button>\n" +
+      "<button onclick=\"navFrame('http://codereview.chromium.org')\">Go cross-site (codereview)</button>\n" +
+      "<button onclick=\"navFrame('simple.html')\">Go same-site</button><p>\n";
+  document.body.appendChild(frameHTML);
+  nextFrameNum++;
 }
+
+function navFrame(num, url) {
+  document.getElementById("frame" + num).src = url;
+}
+
 </script>
 </head>
-<body>
+<body onload="addFrame()">
 <h1>Cross-site iframe test</h1>
 
-Frame 1:<br>
-<iframe
-    id="frame1" src="data:text/html,Initial page"
-    width=500 height=300></iframe><br>
-<button onclick="navFrame('https://csreis.github.io')">Go cross-site (simple page)</button>
-<button onclick="navFrame('http://codereview.chromium.org')">Go cross-site (codereview)</button>
-<button onclick="navFrame('simple.html')">Go same-site</button>
+<button onclick="addFrame()">Add Frame</button>
 <p>
+<hr>
 
 </html>
