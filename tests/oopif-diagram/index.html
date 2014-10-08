@@ -5,10 +5,17 @@
     background: rgb(207, 226, 243);
   }
   </style>
+  <script>
+    function openWindow() {
+      window.open("data:text/html,<a href='c2.html'>Go</a>");
+      document.body.removeChild(document.body.getElementById("openButton"));
+    }
+  </script>
 </head>
 <body>
 <h1>A</h1>
 <iframe width=100 height=70 src="data:text/html,<a href='https://csreis.github.io/tests/oopif-diagram/b.html'>Go</a>"></iframe>
 <iframe width=100 height=70 src="data:text/html,<a href='http://csreis.github.io/tests/oopif-diagram/c.html'>Go</a>"></iframe>
+<button id="openButton" onclick="openWindow()">Open</button>
 </body>
 </html>
