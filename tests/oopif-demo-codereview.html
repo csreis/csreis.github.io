@@ -1,0 +1,51 @@
+<!--
+  Out-of-process iframes demo
+
+  Usage:
+  1) Start Chrome with --site-per-process.
+  2) Log into https://codereview.chromium.org.
+  3) Visit this page.
+  4) Kill the chromium.org process.
+
+-->
+<html>
+<head>
+<title>Evil Page Demo</title>
+<style>
+body {
+  font-family: Tahoma, Sans Serif;
+  font-size: 14pt;
+  color: #ffffff;
+  background-color: #990000;
+}
+.subframe {
+  font-size: 12pt;
+  color: #cccccc;
+  border: solid 1px;
+  padding: 5px;
+  width: 810;
+}
+</style>
+<script>
+document.onclick = function() {
+  var step2 = document.getElementById("step2");
+  step2.style.textDecoration = "line-through";
+}
+</script>
+</head>
+<body>
+<h1>Evil Page Demo</h1>
+
+<ul>
+<li> Step 1. Exploit a Chrome bug and take over renderer process.
+<li id="step2"> Step 2. Reach into user's account in iframe.
+<li> Step 3. Profit!
+</ul>
+
+<p class="subframe">
+&lt;iframe src='https://codereview.chromium.org/mine'&gt;<br>
+<iframe src="https://codereview.chromium.org/mine" style=" border:solid 1px #777 " width="800" height="400" frameborder="0"></iframe>
+</p>
+
+</body>
+</html>
