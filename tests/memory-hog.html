@@ -1,0 +1,13 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>Memory hog</h1>
+<script>
+mem = new Array(1024*1024*32);
+for (var i = 0; i < mem.length; i += 16)
+  mem[i] = i;
+</script>
+</body>
+</html>
