@@ -19,7 +19,7 @@ function output(msg) {
 function sendMessage(win, msg) {
   output("Sending: " + msg);
   try {
-    win.postMessage(msg, "https://csreis.github.io");
+    win.postMessage(msg, "*");
   } catch (e) {
     output("Error: " + e);
   }
