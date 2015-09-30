@@ -2,21 +2,35 @@
 <head>
 <link rel="stylesheet" href="tests.css">
 <script>
+var w;
+
 function navFrame(url) {
   document.getElementById("frame1").src = url;
+}
+
+function openPopup(url) {
+  w = window.open(url);
 }
 
 function output(msg) {
   document.getElementById("output").innerText += msg + "\n";
 }
 
-function sendMessage(msg) {
+function sendMessage(win, msg) {
   output("Sending: " + msg);
   try {
-    document.getElementById("frame1").contentWindow.postMessage(msg, "https://csreis.github.io");
+    win.postMessage(msg, "https://csreis.github.io");
   } catch (e) {
     output("Error: " + e);
   }
+}
+
+function sendMessageToSubframe(msg) {
+  sendMessage(document.getElementById("frame1").contentWindow, msg);
+}
+
+function sendMessageToPopup(msg) {
+  sendMessage(w, msg);
 }
 
 window.addEventListener(
@@ -31,13 +45,23 @@ window.addEventListener(
 <body>
 <h1>postMessage test</h1>
 
+<p>
 Frame 1:<br>
 <iframe
     id="frame1" src="data:text/html,Initial page"
     width=500 height=300></iframe><br>
 <button onclick="navFrame('https://csreis.github.io/tests/post-message-subframe')">Load cross-site subframe</button>
-<button onclick="sendMessage('foo')">postMessage to subframe</button>
+<button onclick="sendMessageToSubframe('foo')">postMessage to subframe</button>
+</p>
+
 <p>
+<button onclick="openPopup('https://csreis.github.io/tests/post-message-subframe')">Open cross-site popup</button>
+<button onclick="sendMessageToPopup('foo')">postMessage to popup</button>
+</p>
+
+<p>
+Output:<br>
 <div id="output"></div>
+</p>
 
 </html>
