@@ -6,13 +6,15 @@
 var nextFrameNum = 1;
 
 function addFrame() {
-  var frameHTML =
+  var div = document.createElement("div");
+  var divHTML =
       "Frame " + nextFrameNum + ":<br>\n" +
       "<iframe id=\"frame" + nextFrameNum + "\" src=\"data:text/html,Initial page\" width=500 height=300></iframe><br>\n" +
       "<button onclick=\"navFrame(" + nextFrameNum + ", 'https://csreis.github.io')\">Go cross-site (simple page)</button>\n" +
       "<button onclick=\"navFrame(" + nextFrameNum + ", 'http://codereview.chromium.org')\">Go cross-site (codereview)</button>\n" +
       "<button onclick=\"navFrame(" + nextFrameNum + ", 'simple.html')\">Go same-site</button><p>\n";
-  document.body.innerHTML += frameHTML;
+  div.innerHTML = divHTML;
+  document.body.appendChild(div);
   nextFrameNum++;
 }
 
