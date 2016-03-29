@@ -1,0 +1,22 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+var w;
+function createPopup() {
+  w = window.open();
+}
+</head>
+<body>
+<h1>Popup test</h1>
+
+This page automatically tries to create a popup without a user gesture.<br>
+<script>
+createPopup();
+</script>
+
+<p>
+Or, create it with a user gesture:<br>
+<button onclick="createPopup()">Create popup</button>
+
+</html>
