@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+  var blob = new Blob(["foo"], {type: "text/html"});
+  var blobURL = URL.createObjectURL(blob);
+  
+  function addBlobFrame() {
+    var f = document.createElement("iframe");
+    f.src = blobURL;
+    document.body.appendChild(f);
+  }
+  
+  function openBlobPopup() {
+    var w = window.open();
+    w.opener = null;
+    w.location.href = blobURL;
+  }
+</script>
+</head>
+<body>
+<h1>Blob URL test</h1>
+<button onclick="addBlobFrame()">Add iframe with blob URL</button><br>
+<button onclick="openBlobPopup">Open blob popup with null opener</button><p>
+</body>
+</html>
