@@ -4,15 +4,17 @@
 <script>
   var blob = new Blob(["foo"], {type: "text/html"});
   var blobURL = URL.createObjectURL(blob);
+  var f;
+  var w;
   
   function addBlobFrame() {
-    var f = document.createElement("iframe");
+    f = document.createElement("iframe");
     f.src = blobURL;
     document.body.appendChild(f);
   }
   
   function openBlobPopup() {
-    var w = window.open();
+    w = window.open();
     w.opener = null;
     w.location.href = blobURL;
   }
