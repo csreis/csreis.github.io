@@ -5,10 +5,13 @@
 <body>
 <h1>POST form submission</h1>
 
+This submits a form to echo.colons.co, which echos the response.
+
 <p>
-<form method="POST" action="https://csreis.github.io">
+<form method="POST" action="http://echo.colons.co/?q=%s">
 <input type="text" name="textfield"><br>
 <input type="file" name="filefield"><br>
+<input type="file" multiple webkitdirectory id="directoryfield"/>
 <input type="hidden" name="hiddenfield" value="foo">
 <input type="submit" value="Submit">
 </form>
