@@ -13,12 +13,12 @@ function navFrame(url) {
 <script>
 var f = document.createElement("iframe");
 f.id = "frame1";
-f.src = "javascript:false";
 document.body.appendChild(f);
 
 f.src = "data:text/html,Dynamic content: " + Date.now();
 </script>
 
+<br>
 <button onclick="navFrame('https://csreis.github.io')">Go cross-site (simple page)</button>
 <p>
 
