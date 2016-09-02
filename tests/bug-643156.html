@@ -1,0 +1,15 @@
+<html>
+  <head>
+  <script type="text/javascript">
+    window.onload = function() {
+      if (window.top != window) {
+        window.console.log('hello');
+        window.top.location.assign(window.location);
+      }
+    }
+  </script>
+  </head>
+  <body>
+    Hello, this is a test.
+  </body>
+</html>
