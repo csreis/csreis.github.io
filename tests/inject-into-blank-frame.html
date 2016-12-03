@@ -20,7 +20,7 @@ Frame 1:<br>
 <p>
 
 <script>
-document.getElementById("frame1").contentDocument.body.innerHTML = "Injected content.";
+frames[0].document.body.innerHTML = "This content was injected on page load."
 </script>
 </body>
 </html>
