@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>Inject into about:blank/#foo test</h1>
+
+Frame 1:<br>
+<iframe
+    src="about:blank/#foo" id="frame1"
+    width=500 height=300></iframe><br>
+
+<script>
+frames[0].document.body.innerHTML = "This content was injected on page load."
+</script>
+
+</body>
+</html>
