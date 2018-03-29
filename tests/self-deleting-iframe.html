@@ -6,6 +6,6 @@
 <body>
 This page loads an iframe that deletes itself in its load event.
 <iframe id="frame1"
-        srcdoc="<html><body onload='parent.document.body.removeChild(parent.document.getElementsByTagName(\'iframe\')[0]);'>Removing self...</body></html>"></iframe>
+        srcdoc="<html><body onload=\"parent.document.body.removeChild(parent.document.getElementsByTagName('iframe')[0]);\">Removing self...</body></html>"></iframe>
 </body>
 </html>
