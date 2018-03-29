@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>Page with self-deleting iframe</title>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+This page loads an iframe that deletes itself in its load event.
+<iframe id="frame1"
+        srcdoc="<html><body onload='parent.document.body.removeChild(parent.document.getElementById(\'frame1\'));'>Removing self...</body></html>">
+</body>
+</html>
