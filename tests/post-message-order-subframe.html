@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>postMessage order test - subframe</h1>
+
+<script>
+var focused = false;
+window.onfocus = function() {
+  focused = true;
+  console.log("Focused");
+}
+window.onblur = function() {
+  focused = false;
+  console.log("Not focused");
+}
+window.onmessage = function() {
+  console.log("Message received.  Focused? " + focused);
+}
+</script>
+</body>
+</html>
