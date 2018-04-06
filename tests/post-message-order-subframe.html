@@ -7,6 +7,7 @@
 
 <script>
 var focused = false;
+var msg = "";
 window.onfocus = function() {
   focused = true;
   console.log("Focused");
@@ -15,9 +16,20 @@ window.onblur = function() {
   focused = false;
   console.log("Not focused");
 }
-window.onmessage = function() {
-  console.log("Message received.  Focused? " + focused);
+window.onmessage = function(e) {
+  if (e.origin != "https://csreis.github.io" && e.origin != "http://csreis.github.io") {
+    console.log("Not a supported origin");
+    return;
+  }
+  console.log("Message received: '" + msg + "'. Focused? " + focused);
+  msg = e.data;
+  setTimeout(checkMsg, 1);
 }
+
+function checkMsg() {
+  console.log("After timeout, message is: " + msg);
+}
+
 </script>
 </body>
 </html>
