@@ -14,6 +14,7 @@ var test = function () {
   var f = frames[0];
   f.postMessage("msg1", "*");
   f.focus();
+  f.postMessage("msg2", "*");
 }
 </script>
 <button onclick="test()">Run test</button>
