@@ -21,7 +21,7 @@ window.onmessage = function(e) {
     console.log("Not a supported origin");
     return;
   }
-  console.log("Message received: '" + msg + "'. Focused? " + focused);
+  console.log("Message received: '" + e.data + "'. Focused? " + focused);
   msg = e.data;
   setTimeout(checkMsg, 1);
 }
