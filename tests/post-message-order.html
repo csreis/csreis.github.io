@@ -1,0 +1,21 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>postMessage order test</h1>
+
+This page loads a cross-site iframe and tests the order of delivered events.<br>
+<iframe src="https://csreis.github.io/tests/post-message-order-iframe.html"
+    name="frame1" width=500 height=300></iframe><br>
+
+<script>
+var test = function () {
+  var f = frames[0];
+  f.postMessage("msg1", "*");
+  f.focus();
+}
+</script>
+<button onclick="test()">Run test</button>
+</body>
+</html>
