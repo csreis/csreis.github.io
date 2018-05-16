@@ -1,0 +1,27 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>Resize events in iframes</h1>
+
+The cross-site iframe on this page logs to the console if it hears a resize event.
+No resize is expected until the button is clicked.
+<br>
+
+<script>
+var f = document.createElement("iframe");
+var w = 400;
+f.src = "http://web.evilbit.io/resize_detector.html";
+document.body.appendChild(f);
+
+function resizeNow() {
+	w += 10;
+	f.width = w;
+}
+</script>
+<br>
+<button onclick="resizeNow()">Resize</button>
+
+</body>
+</html>
