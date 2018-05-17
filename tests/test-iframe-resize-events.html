@@ -5,16 +5,17 @@
 <body>
 <h1>Resize events in iframes</h1>
 
-The cross-site iframe on this page logs to the console if it hears a resize event.
-No resize is expected until the button is clicked.
-<br>
+The iframe on this page logs to the console if it hears a resize event.<br>
+No resize is expected until the button is clicked.<br>
+When visiting this page over HTTP, the iframe is cross-site.  When visiting over HTTPS, the iframe is same-site.
+<p>
 
 <script>
 var f = document.createElement("iframe");
-var w = 400;
 f.src = "https://csreis.github.io/tests/resize-detector.html";
 document.body.appendChild(f);
 
+var w = 400;
 function resizeNow() {
 	w += 10;
 	f.width = w;
