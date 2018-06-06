@@ -10,11 +10,14 @@ function navFrame(url) {
 <body>
 <h1>Cross-site iframe input toggle test</h1>
 
-The div below (containing the label and iframe but not the buttons) has event handlers for mousedown, mouseup, and mouseleave.
-The iframe starts with pointer-events: none, which gets removed on mousedown and replaced on mouseup and mouseleave.
+The div below (containing the label and iframe but not the buttons) has event handlers for mousedown, mouseup, and
+mouseleave, each of which logs to the console.<br>
+The iframe starts with pointer-events: none, which gets removed by the div's mousedown handler and replaced by the
+div's mouseup and mouseleave handlers.<br>
 Usually, the div will receive the mouse events for the iframe when pointer-events: none is present, but the iframe will
 receive the mouse events when it is not.  Thus, the div typically receives the mousedown but not the mouseup when the
 user clicks on the iframe.
+<p>
 
 <div
     onmousedown="console.log('down'); document.getElementById('frame1').style='pointer-events:all';"
