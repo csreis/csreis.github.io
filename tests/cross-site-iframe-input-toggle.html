@@ -21,8 +21,8 @@ user clicks on the iframe.
 
 <div
     onmousedown="console.log('down'); document.getElementById('frame1').style='pointer-events:all';"
-    onmousedown="console.log('up'); document.getElementById('frame1').style='pointer-events:none';"
-    onmousedown="console.log('leave'); document.getElementById('frame1').style='pointer-events:none';">  
+    onmouseup="console.log('up'); document.getElementById('frame1').style='pointer-events:none';"
+    onmouseleave="console.log('leave'); document.getElementById('frame1').style='pointer-events:none';">  
 Frame 1:<br>
 <iframe
     style="pointer-events: none"
