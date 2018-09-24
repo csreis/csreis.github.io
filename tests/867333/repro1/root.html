@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//imasdk.googleapis.com/js/sdkloader/ima3_debug.js"></script>
+        <script src="./sdk.js"></script>
+    </head>
+    <body>
+        <button id="requestAd">requestAd</button>
+
+        <script type="text/javascript">
+            adSDK.init();
+            document.getElementById('requestAd').addEventListener('click', () => { 
+                adSDK.requestAd();
+            });
+        </script>
+        
+        <iframe width=800 height=600 src="https://csreis.github.io/tests/867333/repro1/no-iframe.html"></iframe>
+    </body>
+</html>
