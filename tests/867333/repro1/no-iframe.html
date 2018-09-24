@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//imasdk.googleapis.com/js/sdkloader/ima3_debug.js"></script>
+        <script src="./sdk.js"></script>
+    </head>
+    <body>
+        <button id="requestAd">requestAd</button>
+
+        <script type="text/javascript">
+            adSDK.init();
+            document.getElementById('requestAd').addEventListener('click', () => { 
+                adSDK.requestAd();
+            });
+        </script>
+    </body>
+</html>
