@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function createInnerFrame() {
+  var f = document.createElement("iframe");
+  f.src = "https://csreis.github.io/tests/867333/repro2/iframe.html";
+  document.body.appendChild(f);
+}
+
+function createAdFrame() {
+  var f = document.createElement("iframe");
+  f.src = "https://www.example.com";
+  document.body.appendChild(f);
+}
+</script>
+</head>
+<body>
+<h1>Test identical subframe creation race</h1>
+<script>
+createInnerFrame();
+
+// Set a breakpoint here to let inner frame win the race.
+createAdFrame();
+
+</script>
+</body>
+</html>
