@@ -5,6 +5,7 @@
 function createAdFrame() {
   var f = document.createElement("iframe");
   f.src = "https://www.example.com";
+  f.onload = function() { console.log("Inner frame's ad frame loaded."); }
   document.body.appendChild(f);
 }
 </script>
