@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+  function addBadImage() {
+    i = document.createElement("img");
+    f.src = "https://testsafebrowsing.appspot.com/s/bad_assets/small.png";
+    document.body.appendChild(i);
+  }
+</script>
+</head>
+<body>
+<h1>Unsafe Image test</h1>
+Examples taken from <a href="https://testsafebrowsing.appspot.com/">https://testsafebrowsing.appspot.com/</a><p>
+
+<button onclick="addBadImage()">Add image blocked by Safe Browsing</button><br>
+</body>
+</html>
