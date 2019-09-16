@@ -2,26 +2,13 @@
 <head>
 <link rel="stylesheet" href="tests.css">
 <script>
-function output(msg) {
-  document.getElementById("output").innerText += msg + "\n";
-}
-window.addEventListener(
-  "message",
-  function (event) {
-    var msg = "bar";
-    output("Received: " + event.data);
-    output("Sending reply: " + msg);
-    event.source.postMessage(msg, event.origin);
-    window.close();
-  },
-  false);
+window.opener.postMessage("send then close", "*");
+window.close();
 </script>
 </head>
 <body>
 <h1>Self-closing postMessage popup</h1>
 
-This popup expects to be opened by post-message.html and receive a message from it.  It will send a reply and immediately close.
-
-<div id="output"></div>
+This popup expects to be opened by post-message.html.  It will send a postMessage to its opener and immediately close.
 
 </html>
