@@ -50,12 +50,13 @@ Frame 1:<br>
 <iframe
     id="frame1" src="data:text/html,Initial page"
     width=500 height=300></iframe><br>
-<button onclick="navFrame('https://csreis.github.io/tests/post-message-subframe')">Load cross-site subframe</button>
+<button onclick="navFrame('https://csreis.github.io/tests/post-message-subframe.html')">Load cross-site subframe</button>
 <button onclick="sendMessageToSubframe('foo')">postMessage to subframe</button>
 </p>
 
 <p>
-<button onclick="openPopup('post-message-subframe')">Open popup</button>
+<button onclick="openPopup('https://csreis.github.io/tests/post-message-subframe.html')">Open popup</button>
+<button onclick="openPopup('https://csreis.github.io/tests/self-closing-post-message-popup.html')">Open self-closing popup</button>
 <button onclick="sendMessageToPopup('foo')">postMessage to popup</button>
 </p>
 
