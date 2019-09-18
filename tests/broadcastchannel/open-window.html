@@ -37,6 +37,8 @@ function openWindow(url, openParams, iterations) {
  - Works (since close() is delayed 100ms)<p>
 
 <button onclick="openWindow('send-postmessage.html', '', 1)">Open Window (postMessage)</button><button onclick="openWindow('send-postmessage.html', '', 10)">x10</button>
+ - Works same-process<br>
+<button onclick="openWindow('https://csreis.github.io/tests/broadcastchannel/send-postmessage.html', '', 1)">Open Window (postMessage)</button><button onclick="openWindow('https://csreis.github.io/tests/broadcastchannel/send-postmessage.html', '', 10)">x10</button>
  - Works cross-process<p>
 
 Output:<br>
