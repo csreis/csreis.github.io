@@ -1,0 +1,45 @@
+<html>
+<head>
+<script>
+var numMsgs = 0;
+
+// Listen for BroadcastChannel messages.
+var bc = new BroadcastChannel("foo");
+bc.onmessage = function(msg) {
+  var output = document.getElementById("output");
+  output.innerText += ++numMsgs + ". Received BroadcastChannel: " + msg.data + "\n";
+}
+
+// Listen for postMessage.
+window.onmessage = function(msg) {
+  var output = document.getElementById("output");
+  output.innerText += ++numMsgs + ". Received postMessage: " + msg.data + "\n";
+}
+
+function openWindow(url, openParams, iterations) {
+  for (var i=0; i<iterations; i++) {
+    var w = window.open(url, "", openParams);
+  }
+}
+</script>
+</head>
+<body>
+
+<button onclick="openWindow('send-bcmessage.html', '', 1)">Open Window (BroadcastChannel)</button><button onclick="openWindow('send-bcmessage.html', '', 10)">x10</button>
+ - Works (due to same-process popup)<br>
+
+<button onclick="openWindow('send-bcmessage.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener)</button><button onclick="openWindow('send-bcmessage.html', 'noopener', 10)">x10</button>
+ - Usually doesn't work (due to popup process exit)<br>
+<button onclick="openWindow('send-bcmessage-unload.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener, with unload)</button><button onclick="openWindow('send-bcmessage-unload.html', 'noopener', 10)">x10</button>
+ - Usually works (since unload handler somewhat delays popup process exit)<p>
+
+<button onclick="openWindow('send-bcmessage-delay.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener, close with delay)</button><button onclick="openWindow('send-bcmessage-delay.html', 'noopener', 10)">x10</button>
+ - Works (since close() is delayed 100ms)<p>
+
+<button onclick="openWindow('send-postmessage.html', '', 1)">Open Window (postMessage)</button><button onclick="openWindow('send-postmessage.html', '', 10)">x10</button>
+ - Works cross-process<p>
+
+Output:<br>
+<div id="output"></div>
+</body>
+</html>
