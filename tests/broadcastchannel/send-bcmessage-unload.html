@@ -1,0 +1,10 @@
+<html>
+<body>
+<script>
+window.onunload = function() {}
+var bc = new BroadcastChannel("foo");
+bc.postMessage("sent bc.postMessage at " + new Date().getTime());
+window.close();
+</script>
+</body>
+</html>
