@@ -1,0 +1,9 @@
+<html>
+<body>
+<script>
+var bc = new BroadcastChannel("foo");
+bc.postMessage("sent bc.postMessage at " + new Date().getTime());
+setTimeout(function() { window.close(); }, 100);
+</script>
+</body>
+</html>
