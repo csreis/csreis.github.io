@@ -31,7 +31,7 @@ function openWindow(url, openParams, iterations) {
 <button onclick="openWindow('send-bcmessage.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener)</button><button onclick="openWindow('send-bcmessage.html', 'noopener', 10)">x10</button>
  - Usually doesn't work (due to popup process exit)<br>
 <button onclick="openWindow('send-bcmessage-unload.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener, with unload)</button><button onclick="openWindow('send-bcmessage-unload.html', 'noopener', 10)">x10</button>
- - Usually works (since unload handler somewhat delays popup process exit)<p>
+ - Sometimes works (maybe since unload handler somewhat delays popup process exit?)<p>
 
 <button onclick="openWindow('send-bcmessage-delay.html', 'noopener', 1)">Open Window (BroadcastChannel, noopener, close with delay)</button><button onclick="openWindow('send-bcmessage-delay.html', 'noopener', 10)">x10</button>
  - Works (since close() is delayed 100ms)<p>
