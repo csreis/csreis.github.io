@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+var w;
+function slowPopup {
+  w = window.open("http://tests.netsekure.org/slow.php?seconds=5", "foo");
+}
+function goSameOriginInPopup() {
+  w.location.href = "simple.html";
+}
+function goBackInPopup() {
+  w.history.back();
+}
+</script>
+</head>
+<body>
+<h1>Links to slow URLs</h1>
+
+<ul>
+<li><a href="http://tests.netsekure.org/slow.php?seconds=5">Slow URL in this frame</a>
+<li><a href="http://tests.netsekure.org/slow.php?seconds=5" target="foo">Slow URL in new named tab</a>
+</ul>
+
+<ul>
+<li><button onclick="slowPopup()">window.open to slow URL in named popup</button>
+<li><button onclick="goSameOriginInPopup()">Go same-origin in named popup</button>
+<li><button onclick="goBackInPopup()">Go back in named popup</button>
+</ul>
+
+</html>
