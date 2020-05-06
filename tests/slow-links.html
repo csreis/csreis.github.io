@@ -12,6 +12,10 @@ function goSameOriginInPopup() {
 function goBackInPopup() {
   w.history.back();
 }
+function forwardInterrupt() {
+  w.history.forward();
+  setTimeout("w.location.href = 'http://tests.netsekure.org/slow.php?seconds=5#foo'", 1);
+}
 </script>
 </head>
 <body>
@@ -26,6 +30,7 @@ function goBackInPopup() {
 <li><button onclick="slowPopup()">window.open to slow URL in named popup</button>
 <li><button onclick="goSameOriginInPopup()">Go same-origin in named popup</button>
 <li><button onclick="goBackInPopup()">Go back in named popup</button>
+<li><button onclick="forwardInterrupt()">Go forward in named popup and interrupt</button>
 </ul>
 
 </html>
