@@ -1,0 +1,16 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+window.onload = function() {
+  document.getElementByID("frame1").contentDocument.write("foo");
+}
+</head>
+<body>
+<h1>iframe with document.write</h1>
+
+This iframe is populated with document.write from its parent frame.<br>
+<iframe id="frame1" width=500 height=300></iframe><br>
+
+</body>
+</html>
