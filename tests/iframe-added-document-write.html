@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+window.onload = function() {
+  var f = document.createElement("iframe");
+  document.body.appendChild(f);
+  f.contentDocument.write("foo");
+}
+</script>
+</head>
+<body>
+<h1>Script-created iframe with document.write</h1>
+
+This iframe is created by script and then populated with document.write from its parent frame.<br>
+
+</body>
+</html>
