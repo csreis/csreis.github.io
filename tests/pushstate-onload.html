@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+<script>
+window.onload = function() {
+  history.pushState({}, "", "/foo");
+}
+window.onpopstate = function() {
+  document.body.innerHTML += "<div>popstate event</div>";
+}
+</script>
+</head>
+<body>
+<h1>pushState test</h1>
+
+This page automatically does a pushState during onload, and adds text for popstate events.<br>
+
+</html>
