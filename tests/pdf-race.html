@@ -7,8 +7,7 @@
   function swap() {
     var otherID = (id == "pdf1") ? "pdf2" : "pdf1";
     document.getElementById(otherID).src = "https://charlesreis.com/research/publications/sec19-reis.pdf";
-    document.getElementById(id).src = "about:blank";
-    id = otherID;
+    setTimeout(function () { document.getElementById(id).src = "about:blank"; id = otherID; }, 20);
   }
 </script>
 </head>
