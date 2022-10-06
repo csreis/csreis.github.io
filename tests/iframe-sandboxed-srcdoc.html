@@ -6,7 +6,7 @@
 <h1>iframe srcdoc</h1>
 
 This sandboxed iframe has a srcdoc attribute.<br>
-<iframe sandbox="allow-scripts" srcdoc="<div><a href='simple.html'>Relative link</a></div>Base URI: <div id='outputBaseUri'></div>Origin: <div id='outputOrigin'></div><script>document.getElementById('outputBaseUri').innerText=document.baseURI;document.getElementById('outputOrigin').innerText=window.origin;</script>"
+<iframe sandbox="allow-scripts" srcdoc="<div><a href='simple.html'>Relative link</a></div><div id='outputBaseUri'>BaseURI: </div><div id='outputOrigin'>Origin: </div><script>document.getElementById('outputBaseUri').innerText+=document.baseURI;document.getElementById('outputOrigin').innerText+=window.origin;</script>"
     name="frame1" width="500" height="300"></iframe>
 
 </body>
