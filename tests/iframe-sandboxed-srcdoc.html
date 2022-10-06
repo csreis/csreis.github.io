@@ -1,0 +1,13 @@
+<html>
+<head>
+<link rel="stylesheet" href="tests.css">
+</head>
+<body>
+<h1>iframe srcdoc</h1>
+
+This sandboxed iframe has a srcdoc attribute.<br>
+<iframe sandbox="allow-scripts" srcdoc="<a href='simple.html'>Relative link</a><br>Base URI: <div id='output'></div><script>document.getElementById('output').innerText=document.baseURI;</script>"
+    name="frame1" width="500" height="300"></iframe>
+
+</body>
+</html>
