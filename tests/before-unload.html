@@ -1,0 +1,12 @@
+<html>
+<head>
+<title>Page with beforeunload</title>
+<link rel="stylesheet" href="tests.css">
+<script>
+window.onbeforeunload = function() { return "foo"; }
+</script>
+</head>
+<body>
+Page with beforeunload.  An interaction with the page may be needed for the dialog to appear when navigating away.
+</body>
+</html>
