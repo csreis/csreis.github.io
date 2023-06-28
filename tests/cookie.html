@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Cookie page</title>
+<link rel="stylesheet" href="tests.css">
+<script>
+document.cookie = "foo=3";
+
+function clearCookie() {
+  document.cookie = "foo='';expires=Thu, 01 Jan 1970 00:00:01 GMT";
+}
+</head>
+<body>
+This page sets a cookie (foo=3).
+<p>
+<button onclick="clearCookie()">Clear cookie</button>
+</body>
+</html>
