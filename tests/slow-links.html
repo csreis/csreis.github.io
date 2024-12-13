@@ -4,7 +4,7 @@
 <script>
 var w;
 function slowPopup() {
-  w = window.open("http://tests.netsekure.org/slow.php?seconds=5", "foo");
+  w = window.open("https://tests.netsekure.org/slow.php?seconds=5", "foo");
 }
 function goSameOriginInPopup() {
   w.location.href = "simple.html";
@@ -14,7 +14,7 @@ function goBackInPopup() {
 }
 function forwardInterrupt() {
   w.history.forward();
-  setTimeout("w.location.href = 'http://tests.netsekure.org/slow.php?seconds=5#foo'", 1);
+  setTimeout("w.location.href = 'https://tests.netsekure.org/slow.php?seconds=5#foo'", 1);
 }
 </script>
 </head>
@@ -22,8 +22,8 @@ function forwardInterrupt() {
 <h1>Links to slow URLs</h1>
 
 <ul>
-<li><a href="http://tests.netsekure.org/slow.php?seconds=5">Slow URL in this frame</a>
-<li><a href="http://tests.netsekure.org/slow.php?seconds=5" target="foo">Slow URL in new named tab</a>
+<li><a href="https://tests.netsekure.org/slow.php?seconds=5">Slow URL in this frame</a>
+<li><a href="https://tests.netsekure.org/slow.php?seconds=5" target="foo">Slow URL in new named tab</a>
 </ul>
 
 <ul>
