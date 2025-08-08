@@ -6,6 +6,9 @@ var w;
 function slowPopup() {
   w = window.open("https://tests.netsekure.org/slow.php?seconds=5", "foo");
 }
+function slowPopup() {
+  w = window.open("https://tests.netsekure.org/slow.php?seconds=5", "", "noopener");
+}
 function goSameOriginInPopup() {
   w.location.href = "simple.html";
 }
@@ -24,10 +27,12 @@ function forwardInterrupt() {
 <ul>
 <li><a href="https://tests.netsekure.org/slow.php?seconds=5">Slow URL in this frame</a>
 <li><a href="https://tests.netsekure.org/slow.php?seconds=5" target="foo">Slow URL in new named tab</a>
+<li><a href="https://tests.netsekure.org/slow.php?seconds=5" target="_blank">Slow URL in new unnamed tab</a>
 </ul>
 
 <ul>
 <li><button onclick="slowPopup()">window.open to slow URL in named popup</button>
+<li><button onclick="slowNoopenerPopup()">window.open to slow URL in unnamed noopener popup</button>
 <li><button onclick="goSameOriginInPopup()">Go same-origin in named popup</button>
 <li><button onclick="goBackInPopup()">Go back in named popup</button>
 <li><button onclick="forwardInterrupt()">Go forward in named popup and interrupt</button>
