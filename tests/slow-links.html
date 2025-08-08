@@ -6,7 +6,7 @@ var w;
 function slowPopup() {
   w = window.open("https://tests.netsekure.org/slow.php?seconds=5", "foo");
 }
-function slowPopup() {
+function slowNoopenerPopup() {
   w = window.open("https://tests.netsekure.org/slow.php?seconds=5", "", "noopener");
 }
 function goSameOriginInPopup() {
